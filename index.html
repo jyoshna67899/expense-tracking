@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Simple responsive expense tracker">
+<title>Expense Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+<header class="hero">
+  <div>
+    <p class="eyebrow">PERSONAL FINANCE</p>
+    <h1>Expense Tracker</h1>
+    <p>Track income, expenses and your remaining balance.</p>
+  </div>
+  <button id="clearAllBtn" class="outline-btn">Clear All</button>
+</header>
+
+<section class="summary-grid">
+  <article class="card"><span>Total Balance</span><strong id="balance">₹0</strong></article>
+  <article class="card income"><span>Total Income</span><strong id="income">₹0</strong></article>
+  <article class="card expense"><span>Total Expenses</span><strong id="expense">₹0</strong></article>
+</section>
+
+<section class="panel">
+<h2>Add Transaction</h2>
+<p class="muted">Enter your income or an expense.</p>
+<form id="transactionForm">
+<label>Description<input id="description" type="text" placeholder="e.g. Grocery shopping" required></label>
+<label>Amount (₹)<input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required></label>
+<label>Type<select id="type"><option value="expense">Expense</option><option value="income">Income</option></select></label>
+<label>Category<select id="category">
+<option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option>
+<option>Education</option><option>Entertainment</option><option>Health</option><option>Salary</option><option>Other</option>
+</select></label>
+<label>Date<input id="date" type="date" required></label>
+<button class="primary-btn" type="submit">+ Add Transaction</button>
+</form>
+</section>
+
+<section class="panel">
+<div class="transactions-heading">
+<div><h2>Transactions</h2><p class="muted" id="transactionCount">0 transactions</p></div>
+<input id="search" class="search" type="search" placeholder="Search transactions...">
+</div>
+<div id="transactionList"><div class="empty">No transactions yet. Add your first transaction above.</div></div>
+</section>
+
+<footer>Expense Tracker • Built with HTML, CSS & JavaScript</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
